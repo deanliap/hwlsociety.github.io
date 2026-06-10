@@ -17,7 +17,7 @@ body {
 /* ── HERO ── */
 .hero {
   background: var(--navy);
-  padding: 72px 48px 160px;
+  padding: 72px 48px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -233,7 +233,7 @@ body {
 .hero-wave svg {
   display: block;
   width: 100%;
-  height: 160px;
+  height: 80px;
 }
 
 /* ── MOBILE ── */
