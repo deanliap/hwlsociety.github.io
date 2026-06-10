@@ -17,7 +17,7 @@ body {
 /* ── HERO ── */
 .hero {
   background: var(--navy);
-  padding: 72px 48px 80px;
+  padding: 72px 48px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -195,7 +195,7 @@ body {
 
 .mission-card {
   background: #fff;
-  padding: 40px 32px;
+  padding: 35px 32px;
 }
 
 .mission-card .num {
