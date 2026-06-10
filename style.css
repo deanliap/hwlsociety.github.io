@@ -242,7 +242,7 @@ body {
     padding: 56px 32px 120px;
   }
   .hero-wave svg {
-    height: 100px;
+    height: 80px;
   }
   .hero-title,
   .hero-title-italic {
@@ -250,6 +250,12 @@ body {
   }
   .hero-subtitle {
     font-size: 13px;
+  }
+   .motto-word .gr {
+    font-size: 15px;
+  }
+  .motto-word .en {
+    font-size: 8px;
   }
   .founding-banner {
     flex-direction: column;
