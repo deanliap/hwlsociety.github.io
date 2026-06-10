@@ -22,6 +22,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
 }
 
 .hero-eyebrow {
@@ -217,4 +218,52 @@ body {
   font-size: 14px;
   color: var(--text-muted);
   line-height: 1.75;
+}
+
+/* ── HERO WAVE ── */
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 56px 24px 60px;
+  }
+  .hero-title,
+  .hero-title-italic {
+    font-size: 48px;
+  }
+  .hero-subtitle {
+    font-size: 13px;
+  }
+  .founding-banner {
+    flex-direction: column;
+    padding: 24px;
+    gap: 12px;
+    text-align: center;
+  }
+  .founding-divider {
+    width: 40px;
+    height: 1px;
+  }
+  .mission {
+    padding: 64px 24px;
+  }
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    font-size: 32px;
+  }
 }
