@@ -36,16 +36,15 @@
 
     <!-- WAVE -->
     <div class="hero-wave">
-      <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#004165"/>
-            <stop offset="40%" stop-color="#295F79"/>
-            <stop offset="75%" stop-color="#6D8C9B"/>
-            <stop offset="100%" stop-color="#ffffff"/>
-          </linearGradient>
-        </defs>
-        <path d="M0,120 C360,0 1080,0 1440,120 L1440,120 L0,120 Z" fill="url(#wave-gradient)"/>
+      <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <!-- Layer 1: darkest (navy) — tallest arch -->
+        <path d="M0,160 C360,20 1080,20 1440,160 L1440,160 L0,160 Z" fill="#004165"/>
+        <!-- Layer 2 -->
+        <path d="M0,160 C360,45 1080,45 1440,160 L1440,160 L0,160 Z" fill="#295F79"/>
+        <!-- Layer 3 -->
+        <path d="M0,160 C360,75 1080,75 1440,160 L1440,160 L0,160 Z" fill="#6D8C9B"/>
+        <!-- Layer 4: lightest — shallowest arch -->
+        <path d="M0,160 C360,105 1080,105 1440,160 L1440,160 L0,160 Z" fill="#a8bec8"/>
       </svg>
     </div>
   </div>
@@ -83,6 +82,5 @@
     <div class="label">Grow with us</div>
   </div>
 
-  
 </body>
 </html>
