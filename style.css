@@ -252,10 +252,12 @@ body {
     font-size: 13px;
   }
    .motto-word .gr {
-    font-size: 15px;
+    font-family: 'GFS Didot', serif;
+    font-size: 16px;
+    letter-spacing: 0.5px;
   }
   .motto-word .en {
-    font-size: 8px;
+    font-size: 10px;
   }
   .founding-banner {
     flex-direction: column;
