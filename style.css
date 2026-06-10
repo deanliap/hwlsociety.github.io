@@ -239,7 +239,10 @@ body {
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   .hero {
-    padding: 56px 24px 60px;
+    padding: 56px 24px 120px;
+  }
+  .hero-wave svg {
+    height: 120px;
   }
   .hero-title,
   .hero-title-italic {
