@@ -142,7 +142,7 @@ body {
 
 /* ── MISSION ── */
 .mission {
-  padding: 65px 72px;
+  padding: 80px 72px;
 }
 
 .section-label {
@@ -233,7 +233,7 @@ body {
 .hero-wave svg {
   display: block;
   width: 100%;
-  height: 80px;
+  height: 100px;
 }
 
 /* ── MOBILE ── */
