@@ -352,6 +352,9 @@ body {
   .hero {
     padding: 56px 32px 120px;
   }
+  .hero-eyebrow {
+    display: none;
+  }
   .hero-wave svg {
     height: 80px;
   }
