@@ -1,7 +1,4 @@
-/* ─────────────────────────────── */
-/* ROOT + RESET */
-/* ─────────────────────────────── */
-
+/* ── ROOT & RESET ── */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -17,12 +14,7 @@ body {
   font-family: 'Jost', sans-serif;
 }
 
-
-
-/* ─────────────────────────────── */
-/* NAVIGATION */
-/* ─────────────────────────────── */
-
+/* ── NAVIGATION ── */
 .site-nav {
   width: 100%;
   padding: 32px 64px;
@@ -43,6 +35,7 @@ body {
 
 .nav-logo {
   height: 40px;
+  width: auto;
 }
 
 .nav-brand {
@@ -61,6 +54,7 @@ body {
 .nav-right a {
   font-size: 16px;
   color: rgba(255,255,255,0.85);
+  letter-spacing: 0.02em;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
@@ -76,16 +70,12 @@ body {
   color: var(--gold);
 }
 
+/* Hide hamburger on desktop */
 .hamburger {
   display: none;
 }
 
-
-
-/* ─────────────────────────────── */
-/* HERO */
-/* ─────────────────────────────── */
-
+/* ── HERO ── */
 .hero {
   background: var(--navy);
   padding: 72px 48px 200px;
@@ -118,7 +108,9 @@ body {
   font-weight: 300;
   line-height: 1.05;
   color: #fff;
+  margin: 0;
   max-width: 600px;
+  text-align: center;
 }
 
 .hero-title-italic {
@@ -126,16 +118,19 @@ body {
   font-size: 76px;
   font-weight: 300;
   font-style: italic;
+  line-height: 1.0;
   color: var(--gold);
-  margin-bottom: 36px;
+  margin: 0 0 36px;
+  text-align: center;
 }
 
 .hero-subtitle {
   font-size: 14px;
   color: rgba(255,255,255,0.5);
   line-height: 1.8;
+  margin: 0 0 48px;
   max-width: 420px;
-  margin-bottom: 48px;
+  text-align: center;
 }
 
 .hero-motto {
@@ -144,11 +139,16 @@ body {
   align-items: center;
 }
 
+.motto-word {
+  text-align: center;
+}
+
 .motto-word .gr {
   font-family: 'Cormorant Garamond', serif;
   font-size: 17px;
   font-style: italic;
   color: rgba(255,255,255,0.65);
+  display: block;
 }
 
 .motto-word .en {
@@ -156,6 +156,8 @@ body {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.28);
+  margin-top: 4px;
+  display: block;
 }
 
 .motto-sep {
@@ -163,26 +165,30 @@ body {
   color: rgba(200,168,75,0.3);
 }
 
-.hero-wave svg {
+/* ── HERO WAVE ── */
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 160px;
-  display: block;
+  line-height: 0;
 }
 
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 160px;
+}
 
-
-/* ─────────────────────────────── */
-/* FOUNDING BANNER */
-/* ─────────────────────────────── */
-
+/* ── FOUNDING BANNER ── */
 .founding-banner {
   background: var(--steel);
   border-top: 1px solid rgba(200,168,75,0.3);
   border-bottom: 1px solid rgba(200,168,75,0.3);
   padding: 18px 64px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 24px;
 }
 
@@ -191,6 +197,8 @@ body {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .founding-banner .text {
@@ -198,20 +206,17 @@ body {
   font-size: 15px;
   font-style: italic;
   color: var(--warm);
+  text-align: center;
 }
 
 .founding-divider {
   width: 1px;
   height: 20px;
   background: rgba(200,168,75,0.35);
+  flex-shrink: 0;
 }
 
-
-
-/* ─────────────────────────────── */
-/* MISSION */
-/* ─────────────────────────────── */
-
+/* ── MISSION ── */
 .mission {
   padding: 80px 72px;
 }
@@ -229,6 +234,7 @@ body {
 
 .section-label::before {
   content: '';
+  display: inline-block;
   width: 24px;
   height: 1px;
   background: var(--gold);
@@ -238,10 +244,12 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 44px;
   font-weight: 300;
+  line-height: 1.15;
   margin-bottom: 16px;
 }
 
 .section-title em {
+  font-style: italic;
   color: var(--steel);
 }
 
@@ -255,7 +263,7 @@ body {
 
 .mission-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1px;
   background: var(--warm);
   border: 1px solid var(--warm);
@@ -271,11 +279,14 @@ body {
   font-size: 48px;
   font-weight: 300;
   color: var(--warm);
+  line-height: 1;
+  margin-bottom: 16px;
 }
 
 .mission-card h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 22px;
+  font-weight: 500;
   color: var(--navy);
   margin-bottom: 12px;
 }
@@ -286,12 +297,38 @@ body {
   line-height: 1.75;
 }
 
+/* ── DESKTOP RESET (fixes mobile overrides) ── */
+@media (min-width: 769px) {
+  .nav-right {
+    display: flex;
+  }
 
+  .hamburger {
+    display: none;
+  }
 
-/* ─────────────────────────────── */
+  .nav-brand {
+    display: inline;
+  }
+
+  .site-nav {
+    position: absolute;
+    background: transparent;
+    padding: 32px 64px;
+  }
+
+  .nav-logo {
+    height: 40px;
+  }
+  .mobile-menu {
+    display: none !important;
+  }
+  .hamburger {
+    display: none !important;
+  }
+}
+
 /* ABOUT SECTION */
-/* ─────────────────────────────── */
-
 .about-section {
   background: var(--navy);
   padding: 80px 64px;
@@ -301,12 +338,32 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
+  align-items: start;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-label span {
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+  display: inline-block;
 }
 
 .about-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 44px;
   font-weight: 300;
+  line-height: 1.15;
   color: #fff;
   margin-bottom: 28px;
 }
@@ -355,12 +412,7 @@ body {
   line-height: 1.6;
 }
 
-
-
-/* ─────────────────────────────── */
 /* PATRON SECTION */
-/* ─────────────────────────────── */
-
 .patron-section {
   background: #F6F4F1;
   padding: 80px 64px;
@@ -379,10 +431,11 @@ body {
   height: 200px;
   border-radius: 50%;
   border: 1px solid rgba(200,168,75,0.4);
-  background: #FBF5E6;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background: #FBF5E6;
+  overflow: hidden;
 }
 
 .patron-image-inner {
@@ -392,8 +445,8 @@ body {
   border: 1px solid rgba(200,168,75,0.2);
   overflow: hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .patron-image-inner img {
@@ -410,6 +463,7 @@ body {
   text-transform: uppercase;
   color: var(--mid);
   text-align: center;
+  line-height: 1.6;
   margin-top: 16px;
 }
 
@@ -417,6 +471,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 38px;
   font-weight: 300;
+  line-height: 1.2;
   color: var(--navy);
   margin-bottom: 20px;
 }
@@ -437,24 +492,25 @@ body {
   font-size: 20px;
   font-style: italic;
   color: var(--steel);
+  line-height: 1.6;
+  margin-top: 24px;
   padding-left: 20px;
   border-left: 2px solid var(--gold);
-  margin-top: 24px;
 }
 
 
-
-/* ─────────────────────────────── */
-/* MOBILE */
-/* ─────────────────────────────── */
-
+/* ── MOBILE ── */
 @media (max-width: 768px) {
 
-  /* NAV */
   .site-nav {
     position: relative;
     padding: 20px 28px;
     background: var(--navy);
+  }
+
+  .nav-brand {
+    display: inline;
+    font-size: 14px;
   }
 
   .nav-right {
@@ -469,6 +525,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: white;
+    display: block;
   }
 
   .mobile-menu {
@@ -485,14 +549,22 @@ body {
 
   .mobile-menu a {
     color: white;
+    text-decoration: none;
+    font-size: 16px;
     padding: 12px 0;
     display: block;
   }
 
-
-  /* HERO */
   .hero {
     padding: 56px 32px 120px;
+  }
+
+  .hero-eyebrow {
+    display: none;
+  }
+
+  .hero-wave svg {
+    height: 80px;
   }
 
   .hero-title,
@@ -504,20 +576,28 @@ body {
     font-size: 13px;
   }
 
-  .hero-wave svg {
-    height: 80px;
+  .motto-word .gr {
+    font-family: 'GFS Didot', serif;
+    font-size: 16px;
+    letter-spacing: 0.5px;
   }
 
+  .motto-word .en {
+    font-size: 10px;
+  }
 
-  /* FOUNDING BANNER */
   .founding-banner {
     flex-direction: column;
     padding: 24px;
     gap: 12px;
+    text-align: center;
   }
 
+  .founding-divider {
+    width: 40px;
+    height: 1px;
+  }
 
-  /* MISSION */
   .mission {
     padding: 64px 24px;
   }
@@ -530,8 +610,6 @@ body {
     font-size: 32px;
   }
 
-
-  /* ABOUT */
   .about-section {
     padding: 56px 24px;
   }
@@ -543,15 +621,36 @@ body {
 
   .about-title {
     font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .values-list {
+    border-top: 1px solid rgba(255,255,255,0.12);
   }
 
   .value-item {
     flex-direction: column;
     gap: 8px;
+    padding: 16px 0;
   }
 
+  .value-title {
+    min-width: auto;
+    font-size: 18px;
+    text-align: left;
+  }
 
-  /* PATRON */
+  .value-desc {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* PATRON SECTION — MOBILE */
   .patron-section {
     padding: 56px 24px;
   }
@@ -573,12 +672,27 @@ body {
     height: 130px;
   }
 
+  .patron-caption {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+
   .patron-title {
     font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .patron-text {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: left;
   }
 
   .patron-quote {
     font-size: 18px;
+    margin-top: 20px;
     padding-left: 16px;
+    border-left-width: 2px;
+    text-align: left;
   }
 }
