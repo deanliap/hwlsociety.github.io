@@ -17,19 +17,14 @@ body {
 /* ── NAVIGATION ── */
 .site-nav {
   width: 100%;
-  background: var(--navy);
   padding: 32px 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
-}
-
-.hamburger {
-  display: none;
 }
 
 .nav-left {
@@ -73,6 +68,11 @@ body {
   border: 1px solid var(--gold);
   border-radius: 4px;
   color: var(--gold);
+}
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
 }
 
 /* ── HERO ── */
@@ -163,6 +163,21 @@ body {
 .motto-sep {
   font-size: 18px;
   color: rgba(200,168,75,0.3);
+}
+
+/* ── HERO WAVE ── */
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 160px;
 }
 
 /* ── FOUNDING BANNER ── */
@@ -281,36 +296,67 @@ body {
   color: var(--text-muted);
   line-height: 1.75;
 }
-/* ── HERO WAVE ── */
-.hero-wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  line-height: 0;
-}
 
-.hero-wave svg {
-  display: block;
-  width: 100%;
-  height: 160px;
+/* ── DESKTOP RESET (fixes mobile overrides) ── */
+@media (min-width: 769px) {
+  .nav-right {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-brand {
+    display: inline;
+  }
+
+  .site-nav {
+    background: transparent;
+    padding: 32px 64px;
+  }
+
+  .nav-logo {
+    height: 40px;
+  }
 }
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
+
   .site-nav {
     position: relative;
     padding: 20px 28px;
     background: var(--navy);
-    backdrop-filter: blur(6px);
   }
+
+  .nav-brand {
+    display: inline;
+    font-size: 14px;
+  }
+
+  .nav-right {
+    display: none;
+  }
+
+  .nav-logo {
+    height: 26px;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+
   .hamburger span {
     width: 24px;
     height: 2px;
     background: white;
     display: block;
   }
-  /* Mobile dropdown menu */
+
   .mobile-menu {
     display: none;
     position: absolute;
@@ -320,8 +366,8 @@ body {
     background: rgba(0,0,0,0.85);
     padding: 20px;
     text-align: right;
-}
   }
+
   .mobile-menu a {
     color: white;
     text-decoration: none;
@@ -329,71 +375,59 @@ body {
     padding: 12px 0;
     display: block;
   }
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    cursor: pointer;
-  }
-  .nav-right {
-    display: none;
-  }
-  .nav-brand {
-    font-size: 14px;
-  }
-  .nav-right a {
-    font-size: 14px;
-  }
-  .nav-logo {
-    height: 26px;
-  }
-  .donate-link {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
+
   .hero {
     padding: 56px 32px 120px;
   }
+
   .hero-eyebrow {
     display: none;
   }
+
   .hero-wave svg {
     height: 80px;
   }
+
   .hero-title,
   .hero-title-italic {
     font-size: 48px;
   }
+
   .hero-subtitle {
     font-size: 13px;
   }
-   .motto-word .gr {
+
+  .motto-word .gr {
     font-family: 'GFS Didot', serif;
     font-size: 16px;
     letter-spacing: 0.5px;
   }
+
   .motto-word .en {
     font-size: 10px;
   }
+
   .founding-banner {
     flex-direction: column;
     padding: 24px;
     gap: 12px;
     text-align: center;
   }
+
   .founding-divider {
     width: 40px;
     height: 1px;
   }
+
   .mission {
     padding: 64px 24px;
   }
+
   .mission-grid {
     grid-template-columns: 1fr;
   }
+
   .section-title {
     font-size: 32px;
   }
 }
-
-
