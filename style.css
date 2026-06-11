@@ -17,7 +17,7 @@ body {
 /* ── NAVIGATION ── */
 .site-nav {
   width: 100%;
-  padding: 24px 48px;
+  padding: 32px 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,13 +34,13 @@ body {
 }
 
 .nav-logo {
-  height: 32px;
+  height: 40px;
   width: auto;
 }
 
 .nav-brand {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--gold);
   letter-spacing: 0.05em;
 }
@@ -48,12 +48,13 @@ body {
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 40px;
 }
 
 .nav-right a {
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255,255,255,0.85);
+  letter-spacing: 0.02em;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
@@ -294,16 +295,21 @@ body {
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   .site-nav {
-    padding: 20px 24px;
+    padding: 20px 28px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
   }
   .nav-right {
     gap: 20px;
   }
   .nav-brand {
-    font-size: 14px;
+    display: none;
   }
   .nav-right a {
-    font-size: 13px;
+    font-size: 14px;
+  }
+  .nav-logo {
+    height: 26px;
   }
   .donate-link {
     padding: 6px 12px;
