@@ -112,6 +112,16 @@
     <div class="founding-divider"></div>
     <div class="label">Grow with us</div>
   </div>
+  
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.style.display =
+      mobileMenu.style.display === 'block' ? 'none' : 'block';
+  });
+</script>
 
 </body>
 </html>
