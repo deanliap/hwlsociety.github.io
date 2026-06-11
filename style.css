@@ -610,9 +610,6 @@ body {
     font-size: 32px;
   }
 
-  /* ABOUT — MOBILE */
-@media (max-width: 768px) {
-
   .about-section {
     padding: 56px 24px;
   }
@@ -698,5 +695,4 @@ body {
     border-left-width: 2px;
     text-align: left;
   }
-}
 }
