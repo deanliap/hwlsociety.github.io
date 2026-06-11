@@ -293,6 +293,22 @@ body {
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
+  .site-nav {
+    padding: 20px 24px;
+  }
+  .nav-right {
+    gap: 20px;
+  }
+  .nav-brand {
+    font-size: 14px;
+  }
+  .nav-right a {
+    font-size: 13px;
+  }
+  .donate-link {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
   .hero {
     padding: 56px 32px 120px;
   }
