@@ -312,12 +312,19 @@ body {
   }
 
   .site-nav {
+    position: absolute;
     background: transparent;
     padding: 32px 64px;
   }
 
   .nav-logo {
     height: 40px;
+  }
+  .mobile-menu {
+    display: none !important;
+  }
+  .hamburger {
+    display: none !important;
   }
 }
 
