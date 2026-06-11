@@ -21,7 +21,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 10;
@@ -280,7 +280,9 @@ body {
   color: var(--text-muted);
   line-height: 1.75;
 }
-
+.hamburger {
+  display: none;
+}
 /* ── HERO WAVE ── */
 .hero-wave {
   position: absolute;
@@ -299,6 +301,7 @@ body {
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   .site-nav {
+    position: relative;
     padding: 20px 28px;
     background: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6px);
@@ -313,19 +316,18 @@ body {
   .mobile-menu {
     display: none;
     position: absolute;
-    top: 70px;
+    top: 100%;
     right: 0;
     width: 100%;
     background: rgba(0,0,0,0.85);
     padding: 20px;
-    text-align: right;
   }
   .mobile-menu a {
-    display: block;
-    padding: 12px 0;
     color: white;
-    font-size: 16px;
     text-decoration: none;
+    font-size: 16px;
+    padding: 12px 0;
+    display: block;
   }
   .hamburger {
     display: flex;
