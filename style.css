@@ -696,3 +696,103 @@ body {
     text-align: left;
   }
 }
+
+/* ── NAV DROPDOWN ── */
+.nav-item {
+  position: relative;
+}
+
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--steel);
+  border: 1px solid rgba(200,168,75,0.2);
+  border-radius: 2px;
+  min-width: 180px;
+  z-index: 100;
+  padding: 8px 0;
+}
+
+.nav-item:hover .nav-dropdown {
+  display: block;
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 12px !important;
+  color: rgba(255,255,255,0.75) !important;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-dropdown a:hover {
+  color: var(--gold) !important;
+  background: rgba(255,255,255,0.05);
+  opacity: 1 !important;
+}
+
+/* ── BOARD PAGE ── */
+.board-section {
+  background: var(--navy);
+  padding: 140px 64px 80px;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 48px;
+}
+
+.board-header-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  max-width: 320px;
+  line-height: 1.8;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.board-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 6px;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+.board-card-name:hover {
+  color: var(--gold);
+}
+
+.board-card-name .linkedin-icon {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  margin-left: 8px;
+  vertical-align: middle;
+  transition: color 0.2s;
+}
+
+.board-card-name:hover .linkedin-icon {
+  color: var(--gold);
+}
+
+.board-card-title {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  line-height: 1.5;
+}
