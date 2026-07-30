@@ -136,12 +136,30 @@
     </div>
   </section>
 
-  <script>
+ <script>
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.querySelector('.mobile-menu');
     hamburger.addEventListener('click', () => {
       mobileMenu.style.display =
         mobileMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    const navItem = document.querySelector('.nav-item');
+    const dropdown = document.querySelector('.nav-dropdown');
+    let closeTimer;
+
+    navItem.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+      dropdown.style.display = 'block';
+    });
+    navItem.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => { dropdown.style.display = 'none'; }, 200);
+    });
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+    });
+    dropdown.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => { dropdown.style.display = 'none'; }, 200);
     });
   </script>
 
