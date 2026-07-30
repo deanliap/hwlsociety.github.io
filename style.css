@@ -560,6 +560,15 @@ body {
   text-align: center;
 }
 
+.board-card-featured .board-card-name {
+  display: block;
+  text-align: center;
+}
+
+.board-card-featured .board-card-title {
+  text-align: center;
+}
+
 .board-card-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: 22px;
