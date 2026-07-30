@@ -553,20 +553,11 @@ body {
   background: var(--navy);
   padding: 32px 28px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
 }
 
 .board-card-featured {
   padding: 52px 40px;
-  text-align: center;
-}
-
-.board-card-featured .board-card-name {
-  display: block;
-  text-align: center;
-}
-
-.board-card-featured .board-card-title {
-  text-align: center;
 }
 
 .board-card-name {
@@ -689,17 +680,3 @@ body {
   .board-grid { grid-template-columns: 1fr; }
 }
 
-.board-card-featured {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.board-card-featured .board-card-name {
-  display: inline-block;
-}
-
-.board-card-featured .board-card-title {
-  text-align: center;
-}
