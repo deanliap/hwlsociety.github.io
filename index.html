@@ -28,11 +28,41 @@
     <a href="contact.html">Contact</a>
     <a href="donate.html" class="donate-link">Donate</a>
   </div>
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <script>
+  // Hamburger menu
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.style.display =
+      mobileMenu.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // Dropdown with delay so it doesn't vanish when moving mouse to it
+  const navItem = document.querySelector('.nav-item');
+  const dropdown = document.querySelector('.nav-dropdown');
+  let closeTimer;
+
+  navItem.addEventListener('mouseenter', () => {
+    clearTimeout(closeTimer);
+    dropdown.style.display = 'block';
+  });
+
+  navItem.addEventListener('mouseleave', () => {
+    closeTimer = setTimeout(() => {
+      dropdown.style.display = 'none';
+    }, 200);
+  });
+
+  dropdown.addEventListener('mouseenter', () => {
+    clearTimeout(closeTimer);
+  });
+
+  dropdown.addEventListener('mouseleave', () => {
+    closeTimer = setTimeout(() => {
+      dropdown.style.display = 'none';
+    }, 200);
+  });
+</script>
     <div class="mobile-menu">
       <a href="index.html">Home</a>
        <div class="nav-item">
@@ -123,7 +153,25 @@
       mobileMenu.style.display =
         mobileMenu.style.display === 'block' ? 'none' : 'block';
     });
-  </script>
 
+    const navItem = document.querySelector('.nav-item');
+    const dropdown = document.querySelector('.nav-dropdown');
+    let closeTimer;
+
+    navItem.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+      dropdown.style.display = 'block';
+    });
+    navItem.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => { dropdown.style.display = 'none'; }, 200);
+    });
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+    });
+    dropdown.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => { dropdown.style.display = 'none'; }, 200);
+    });
+  </script>
+  
 </body>
 </html>
