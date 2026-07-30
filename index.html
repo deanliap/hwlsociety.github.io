@@ -28,54 +28,21 @@
     <a href="contact.html">Contact</a>
     <a href="donate.html" class="donate-link">Donate</a>
   </div>
-    <script>
-  // Hamburger menu
-  const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  hamburger.addEventListener('click', () => {
-    mobileMenu.style.display =
-      mobileMenu.style.display === 'block' ? 'none' : 'block';
-  });
-
-  // Dropdown with delay so it doesn't vanish when moving mouse to it
-  const navItem = document.querySelector('.nav-item');
-  const dropdown = document.querySelector('.nav-dropdown');
-  let closeTimer;
-
-  navItem.addEventListener('mouseenter', () => {
-    clearTimeout(closeTimer);
-    dropdown.style.display = 'block';
-  });
-
-  navItem.addEventListener('mouseleave', () => {
-    closeTimer = setTimeout(() => {
-      dropdown.style.display = 'none';
-    }, 200);
-  });
-
-  dropdown.addEventListener('mouseenter', () => {
-    clearTimeout(closeTimer);
-  });
-
-  dropdown.addEventListener('mouseleave', () => {
-    closeTimer = setTimeout(() => {
-      dropdown.style.display = 'none';
-    }, 200);
-  });
-</script>
-    <div class="mobile-menu">
-      <a href="index.html">Home</a>
-       <div class="nav-item">
-        <a href="about.html">About</a>
-        <div class="nav-dropdown">
-          <a href="board.html">Executive Board</a>
-          <a href="sponsors.html">Our Sponsors</a>
-        </div>
-      <a href="membership.html">Membership</a>
-      <a href="contact.html">Contact</a>
-      <a href="donate.html">Donate</a>
-    </div>
-  </nav>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="board.html">Executive Board</a>
+    <a href="sponsors.html">Our Sponsors</a>
+    <a href="membership.html">Membership</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html">Donate</a>
+  </div>
+</nav>
 
   <!-- HERO -->
   <div class="hero">
