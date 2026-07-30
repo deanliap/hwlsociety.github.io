@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — HWLS</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .site-nav { 
+      position: relative; 
+      background: var(--navy); 
+    }
+
+    .contact-section {
+      background: var(--navy);
+      padding: 140px 64px 100px;
+      text-align: center;
+    }
+
+    .contact-header {
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+
+    .contact-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .contact-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .contact-description {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .contact-card {
+      background: var(--navy);
+      padding: 45px 30px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .contact-card:hover {
+      background: rgba(255,255,255,0.03);
+    }
+
+    .contact-label {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .contact-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    @media (max-width: 800px) {
+      .contact-section {
+        padding: 100px 30px 60px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-title {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <div class="nav-left">
+      <img src="assets/logo.png" alt="HWLS Logo" class="nav-logo">
+      <span class="nav-brand">HWLS · EST. 2026</span>
+    </div>
+
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+
+      <div class="nav-item">
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="board.html">Executive Board</a>
+          <a href="sponsors.html">Our Sponsors</a>
+        </div>
+      </div>
+
+      <a href="membership.html">Membership</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="donate-link">Donate</a>
+    </div>
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="board.html">Executive Board</a>
+      <a href="sponsors.html">Our Sponsors</a>
+      <a href="membership.html">Membership</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </nav>
+
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+
+    <div class="contact-header">
+      <h1 class="contact-title">
+        Contact <em>HWLS.</em>
+      </h1>
+
+      <p class="contact-description">
+        We would love to hear from you. Whether you are interested in membership,
+        partnerships, sponsorships, or simply connecting with our community,
+        we look forward to being in touch.
+      </p>
+    </div>
+
+
+    <div class="contact-grid">
+
+      <a href="mailto:hwlsociety@gmail.com" class="contact-card">
+        <div class="contact-label">Email</div>
+        <div class="contact-value">hwlsociety@gmail.com</div>
+      </a>
+
+
+      <a href="https://www.instagram.com/hwlsociety/" target="_blank" class="contact-card">
+        <div class="contact-label">Instagram</div>
+        <div class="contact-value">@hwlsociety</div>
+      </a>
+
+
+      <a href="https://www.linkedin.com/company/hellenic-women%E2%80%99s-leadership-society" target="_blank" class="contact-card">
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value">Hellenic Women’s Leadership Society</div>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.style.display =
+        mobileMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+
+    const navItem = document.querySelector('.nav-item');
+    const dropdown = document.querySelector('.nav-dropdown');
+    let closeTimer;
+
+    navItem.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+      dropdown.style.display = 'block';
+    });
+
+    navItem.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => {
+        dropdown.style.display = 'none';
+      }, 200);
+    });
+
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => {
+        dropdown.style.display = 'none';
+      }, 200);
+    });
+  </script>
+
+</body>
+</html>
