@@ -688,3 +688,18 @@ body {
   .board-header-sub { text-align: left; }
   .board-grid { grid-template-columns: 1fr; }
 }
+
+.board-card-featured {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.board-card-featured .board-card-name {
+  display: inline-block;
+}
+
+.board-card-featured .board-card-title {
+  text-align: center;
+}
