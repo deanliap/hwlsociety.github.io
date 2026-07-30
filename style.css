@@ -535,16 +535,28 @@ body {
 
 .board-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 1px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.06);
+}
+
+.board-grid-2 {
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1px;
+}
+
+.board-grid-3 {
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .board-card {
   background: var(--navy);
   padding: 32px 28px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.board-card-featured {
+  padding: 52px 40px;
 }
 
 .board-card-name {
