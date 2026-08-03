@@ -884,3 +884,221 @@ body {
   .friend-banner { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; }
   .friend-banner-right { align-items: flex-start; }
 }
+
+/* ── PARTNER WITH US PAGE ── */
+.pwu-section {
+  background: #fff;
+  padding: 64px 64px 80px;
+}
+
+.pwu-header {
+  margin-bottom: 48px;
+}
+
+.pwu-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.pwu-title em {
+  font-style: italic;
+  color: var(--steel);
+}
+
+.pwu-intro {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 560px;
+  line-height: 1.8;
+}
+
+.pwu-tiers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.pwu-card {
+  background: #fff;
+  border: 1px solid var(--warm);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pwu-card-top {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.pwu-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.pwu-card-top .pwu-card-name { color: var(--gold); }
+
+.pwu-card-goddess {
+  font-size: 11px;
+  color: var(--mid);
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.pwu-card-top .pwu-card-goddess { color: rgba(255,255,255,0.45); }
+
+.pwu-card-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.pwu-card-top .pwu-card-price { color: #fff; }
+
+.pwu-card-period {
+  font-size: 11px;
+  color: var(--mid);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.pwu-card-top .pwu-card-period { color: rgba(255,255,255,0.35); }
+
+.pwu-card-divider {
+  height: 1px;
+  background: var(--warm);
+  margin-bottom: 24px;
+}
+
+.pwu-card-top .pwu-card-divider { background: rgba(255,255,255,0.12); }
+
+.pwu-benefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.pwu-benefits li {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  line-height: 1.5;
+}
+
+.pwu-card-top .pwu-benefits li { color: rgba(255,255,255,0.65); }
+
+.pwu-benefits li::before {
+  content: '—';
+  color: var(--gold);
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.pwu-btn {
+  width: 100%;
+  padding: 13px;
+  background: transparent;
+  border: 1px solid var(--warm);
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.pwu-btn:hover {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+.pwu-btn-top {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+  font-weight: 500;
+}
+
+.pwu-btn-top:hover {
+  background: var(--navy) !important;
+  border-color: var(--navy) !important;
+  color: #fff !important;
+}
+
+/* Friend of HWLS */
+.pwu-friend {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 48px;
+  padding: 48px 40px;
+  background: #F6F4F1;
+  border: 1px solid var(--warm);
+}
+
+.pwu-friend-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.pwu-friend-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+.pwu-friend-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.pwu-friend-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 300;
+  color: var(--navy);
+}
+
+.pwu-friend-btn {
+  width: auto;
+  padding: 13px 32px;
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+@media (max-width: 768px) {
+  .pwu-section { padding: 40px 24px 60px; }
+  .pwu-title { font-size: 34px; }
+  .pwu-tiers { grid-template-columns: 1fr; }
+  .pwu-friend { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; }
+  .pwu-friend-right { align-items: flex-start; }
+}
