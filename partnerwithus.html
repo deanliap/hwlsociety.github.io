@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner With Us — HWLS</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .site-nav { position: relative; background: var(--navy); }
+    .sponsors-section { padding-top: 60px; }
+  </style>
+</head>
+<body>
 
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <div class="nav-left">
+      <img src="assets/logo.png" alt="HWLS Logo" class="nav-logo">
+      <span class="nav-brand">HWLS · EST. 2026</span>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <div class="nav-item">
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="board.html">Executive Board</a>
+          <a href="sponsors.html">Partner With Us</a>
+        </div>
+      </div>
+      <a href="membership.html">Membership</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="donate-link">Donate</a>
+    </div>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="board.html">Executive Board</a>
+      <a href="sponsors.html">Partner With Us</a>
+      <a href="membership.html">Membership</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </nav>
+
+  <!-- SPONSORS SECTION -->
+  <section class="sponsors-section">
+
+    <!-- HEADER -->
+    <div class="sponsors-header">
+      <p class="section-label"><span></span>Partner With Us</p>
+      <h2 class="sponsors-title">Three tiers of partnership,<br><em>one shared mission.</em></h2>
+      <p class="sponsors-intro">HWLS sponsorship is an investment in the next generation of Hellenic women leaders — and in the visibility of your organization alongside them.</p>
+    </div>
+
+    <!-- TIERS -->
+    <div class="sponsor-tiers">
+
+      <div class="tier-card">
+        <div class="tier-name">Persephone</div>
+        <div class="tier-goddess">Queen of the Underworld — Transformation & New Beginnings</div>
+        <div class="tier-price">$1,000</div>
+        <div class="tier-period">per year</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-benefits">
+          <li>Logo on HWLS website</li>
+          <li>Recognition at select events</li>
+          <li>2 complimentary tickets</li>
+          <li>Social media recognition</li>
+          <li>Talent & recruitment access</li>
+        </ul>
+        <button class="tier-btn">Inquire</button>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-name">Artemis</div>
+        <div class="tier-goddess">Goddess of the Hunt — Ambition, Focus & Independence</div>
+        <div class="tier-price">$2,500</div>
+        <div class="tier-period">per year</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-benefits">
+          <li>Everything in Persephone</li>
+          <li>Named sponsor of one event</li>
+          <li>Speaking opportunity</li>
+          <li>4 complimentary tickets</li>
+          <li>Featured in newsletter</li>
+        </ul>
+        <button class="tier-btn">Inquire</button>
+      </div>
+
+      <div class="tier-card top">
+        <div class="tier-name">Athena</div>
+        <div class="tier-goddess">Goddess of Wisdom — Our Patron, Our Symbol</div>
+        <div class="tier-price">$5,000</div>
+        <div class="tier-period">per year</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-benefits">
+          <li>Title sponsor — flagship event</li>
+          <li>Speaking at two events</li>
+          <li>Logo on all event materials</li>
+          <li>6–8 complimentary tickets</li>
+          <li>Homepage feature placement</li>
+        </ul>
+        <button class="tier-btn">Become an Athena Partner</button>
+      </div>
+
+    </div>
+
+    <!-- FRIEND OF HWLS -->
+    <div class="friend-banner">
+      <div class="friend-banner-left">
+        <p class="section-label"><span></span>One-Time Gift</p>
+        <h3 class="friend-title">Friend of HWLS</h3>
+        <p class="friend-desc">A one-time contribution of $500 or more. Every gift directly supports HWLS programming, events, and community initiatives.</p>
+      </div>
+      <div class="friend-banner-right">
+        <div class="friend-amount">$500+</div>
+        <button class="tier-btn friend-btn">Make a Gift</button>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.style.display =
+        mobileMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    const navItem = document.querySelector('.nav-item');
+    const dropdown = document.querySelector('.nav-dropdown');
+    let closeTimer;
+
+    navItem.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+      dropdown.style.display = 'block';
+    });
+    navItem.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => { dropdown.style.display = 'none'; }, 200);
+    });
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+    });
+    dropdown.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => { dropdown.style.display = 'none'; }, 200);
+    });
+  </script>
+
+</body>
+</html>
