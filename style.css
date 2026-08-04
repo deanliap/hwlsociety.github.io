@@ -12,6 +12,7 @@
 
 body {
   font-family: 'Jost', sans-serif;
+  background: var(--navy);
 }
 
 /* ── NAVIGATION ── */
@@ -271,6 +272,7 @@ body {
 /* ── MISSION ── */
 .mission {
   padding: 80px 72px;
+  background: #fff;
 }
 
 .section-label {
