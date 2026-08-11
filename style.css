@@ -29,7 +29,7 @@ body {
 }
 
 .nav-left {
-  display: flex;
+  dilay: flex;
   align-items: center;
   gap: 12px;
 }
@@ -43,11 +43,11 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
   color: var(--gold);
-  letter-spacing: 0.05em;
+  letter-acing: 0.05em;
 }
 
 .nav-right {
-  display: flex;
+  dilay: flex;
   align-items: center;
   gap: 40px;
 }
@@ -56,7 +56,7 @@ body {
 .nav-item > a {
   font-size: 16px;
   color: rgba(255,255,255,0.85);
-  letter-spacing: 0.02em;
+  letter-acing: 0.02em;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
@@ -74,7 +74,7 @@ body {
 }
 
 .hamburger {
-  display: none;
+  dilay: none;
 }
 
 /* ── NAV DROPDOWN ── */
@@ -83,7 +83,7 @@ body {
 }
 
 .nav-dropdown {
-  display: none;
+  dilay: none;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -108,17 +108,17 @@ body {
 }
 
 .nav-item:hover .nav-dropdown {
-  display: block;
+  dilay: block;
 }
 
 .nav-dropdown a {
-  display: block;
+  dilay: block;
   padding: 12px 24px;
   font-size: 14px !important;
   color: rgba(255,255,255,0.75) !important;
   text-decoration: none;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
+  letter-acing: 0.04em;
+  white-ace: nowrap;
   transition: color 0.2s, background 0.2s;
   opacity: 1 !important;
 }
@@ -132,7 +132,7 @@ body {
 .hero {
   background: var(--navy);
   padding: 72px 48px 200px;
-  display: flex;
+  dilay: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -142,7 +142,7 @@ body {
 
 .hero-eyebrow {
   font-size: 10px;
-  letter-spacing: 0.26em;
+  letter-acing: 0.26em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 24px;
@@ -187,7 +187,7 @@ body {
 }
 
 .hero-motto {
-  display: flex;
+  dilay: flex;
   gap: 32px;
   align-items: center;
 }
@@ -201,12 +201,12 @@ body {
   font-size: 17px;
   font-style: italic;
   color: rgba(255,255,255,0.65);
-  display: block;
+  dilay: block;
 }
 
 .motto-word .en {
   font-size: 9px;
-  letter-spacing: 0.18em;
+  letter-acing: 0.18em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.28);
   margin-top: 4px;
@@ -1320,6 +1320,18 @@ body {
 .sp-slot-friend {
   padding: 32px 16px;
   min-height: 100px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sp-slot-friend:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.sp-slot-friend:hover .sp-slot-text {
+  color: var(--gold);
 }
 
 /* Friends desc */
