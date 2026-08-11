@@ -29,7 +29,7 @@ body {
 }
 
 .nav-left {
-  dilay: flex;
+  display: flex;
   align-items: center;
   gap: 12px;
 }
@@ -47,7 +47,7 @@ body {
 }
 
 .nav-right {
-  dilay: flex;
+  display: flex;
   align-items: center;
   gap: 40px;
 }
@@ -74,7 +74,7 @@ body {
 }
 
 .hamburger {
-  dilay: none;
+  display: none;
 }
 
 /* ── NAV DROPDOWN ── */
@@ -83,7 +83,7 @@ body {
 }
 
 .nav-dropdown {
-  dilay: none;
+  display: none;
   position: absolute;
   top: 100%;
   left: 50%;
@@ -91,7 +91,7 @@ body {
   background: var(--steel);
   border: 1px solid rgba(200,168,75,0.2);
   border-radius: 2px;
-  min-width: 230px;
+  min-width: 200px;
   z-index: 200;
   padding: 16px 0 8px;
   margin-top: 0;
@@ -108,11 +108,11 @@ body {
 }
 
 .nav-item:hover .nav-dropdown {
-  dilay: block;
+  display: block;
 }
 
 .nav-dropdown a {
-  dilay: block;
+  display: block;
   padding: 12px 24px;
   font-size: 14px !important;
   color: rgba(255,255,255,0.75) !important;
@@ -132,7 +132,7 @@ body {
 .hero {
   background: var(--navy);
   padding: 72px 48px 200px;
-  dilay: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -187,7 +187,7 @@ body {
 }
 
 .hero-motto {
-  dilay: flex;
+  display: flex;
   gap: 32px;
   align-items: center;
 }
@@ -201,7 +201,7 @@ body {
   font-size: 17px;
   font-style: italic;
   color: rgba(255,255,255,0.65);
-  dilay: block;
+  display: block;
 }
 
 .motto-word .en {
