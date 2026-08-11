@@ -1320,14 +1320,22 @@ body {
 .sp-slot-friend {
   padding: 32px 16px;
   min-height: 100px;
-  text-decoration: none;
+  text-decoration: none !important;
+  color: inherit;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
 .sp-slot-friend:hover {
   border-color: var(--gold);
+  background: var(--navy);
   transform: translateY(-2px);
+}
+
+.sp-slot-friend .sp-slot-text {
+  color: var(--navy);
+  transition: color 0.2s ease;
 }
 
 .sp-slot-friend:hover .sp-slot-text {
