@@ -324,7 +324,7 @@ body {
 
 .mission-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: var(--warm);
   border: 1px solid var(--warm);
@@ -332,7 +332,7 @@ body {
 
 .mission-card {
   background: #fff;
-  padding: 35px 32px;
+  padding: 35px 26px;
 }
 
 .mission-card .num {
@@ -656,8 +656,9 @@ body {
   .motto-word .en { font-size: 10px; }
   .founding-banner { flex-direction: column; padding: 24px; gap: 12px; text-align: center; }
   .founding-divider { width: 40px; height: 1px; }
+  
   .mission { padding: 64px 24px; }
-  .mission-grid { grid-template-columns: 1fr; }
+  .mission-grid { grid-template-columns: repeat(2, 1fr); }
   .section-title { font-size: 32px; }
   .about-section { padding: 56px 24px; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
