@@ -6,7 +6,9 @@
   --steel: #295F79;
   --mid: #6D8C9B;
   --warm: #E8E4DE;
-  --gold: #C8A84B;
+  --gold: #D6B77C;        /* champagne gold: use on dark backgrounds */
+  --gold-deep: #8C6A2F;   /* bronze gold: use on light backgrounds */
+  --offwhite: #F6F4F1;
   --text-muted: #555;
 }
 
@@ -43,7 +45,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
   color: var(--gold);
-  letter-acing: 0.05em;
+  letter-spacing: 0.05em;
 }
 
 .nav-right {
@@ -56,7 +58,7 @@ body {
 .nav-item > a {
   font-size: 16px;
   color: rgba(255,255,255,0.85);
-  letter-acing: 0.02em;
+  letter-spacing: 0.02em;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
@@ -89,7 +91,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   background: var(--steel);
-  border: 1px solid rgba(200,168,75,0.2);
+  border: 1px solid rgba(214,183,124,0.2);
   border-radius: 2px;
   min-width: 200px;
   z-index: 200;
@@ -117,8 +119,8 @@ body {
   font-size: 14px !important;
   color: rgba(255,255,255,0.75) !important;
   text-decoration: none;
-  letter-acing: 0.04em;
-  white-ace: nowrap;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
   transition: color 0.2s, background 0.2s;
   opacity: 1 !important;
 }
@@ -142,7 +144,7 @@ body {
 
 .hero-eyebrow {
   font-size: 10px;
-  letter-acing: 0.26em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 24px;
@@ -151,7 +153,7 @@ body {
 .hero-divider {
   width: 48px;
   height: 1px;
-  background: rgba(200,168,75,0.4);
+  background: rgba(214,183,124,0.4);
   margin-bottom: 40px;
 }
 
@@ -206,7 +208,7 @@ body {
 
 .motto-word .en {
   font-size: 9px;
-  letter-acing: 0.18em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.28);
   margin-top: 4px;
@@ -215,7 +217,7 @@ body {
 
 .motto-sep {
   font-size: 18px;
-  color: rgba(200,168,75,0.3);
+  color: rgba(214,183,124,0.3);
 }
 
 /* ── HERO WAVE ── */
@@ -236,8 +238,8 @@ body {
 /* ── FOUNDING BANNER ── */
 .founding-banner {
   background: var(--steel);
-  border-top: 1px solid rgba(200,168,75,0.3);
-  border-bottom: 1px solid rgba(200,168,75,0.3);
+  border-top: 1px solid rgba(214,183,124,0.3);
+  border-bottom: 1px solid rgba(214,183,124,0.3);
   padding: 18px 64px;
   display: flex;
   align-items: center;
@@ -265,7 +267,7 @@ body {
 .founding-divider {
   width: 1px;
   height: 20px;
-  background: rgba(200,168,75,0.35);
+  background: rgba(214,183,124,0.35);
   flex-shrink: 0;
 }
 
@@ -279,7 +281,7 @@ body {
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-deep);
   margin-bottom: 12px;
   display: flex;
   align-items: center;
@@ -291,13 +293,13 @@ body {
   display: inline-block;
   width: 24px;
   height: 1px;
-  background: var(--gold);
+  background: var(--gold-deep);
 }
 
 .section-label span {
   width: 24px;
   height: 1px;
-  background: var(--gold);
+  background: var(--gold-deep);
   display: inline-block;
 }
 
@@ -328,6 +330,15 @@ body {
   gap: 1px;
   background: var(--warm);
   border: 1px solid var(--warm);
+}
+
+/* mission grid breakpoints: must sit right after the main rule, in this order */
+@media (max-width: 1000px) {
+  .mission-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .mission-grid { grid-template-columns: 1fr; }
 }
 
 .mission-card {
@@ -442,7 +453,7 @@ body {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 1px solid rgba(200,168,75,0.4);
+  border: 1px solid rgba(214,183,124,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -454,7 +465,7 @@ body {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  border: 1px solid rgba(200,168,75,0.2);
+  border: 1px solid rgba(214,183,124,0.2);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -656,9 +667,8 @@ body {
   .motto-word .en { font-size: 10px; }
   .founding-banner { flex-direction: column; padding: 24px; gap: 12px; text-align: center; }
   .founding-divider { width: 40px; height: 1px; }
-  
+
   .mission { padding: 64px 24px; }
-  .mission-grid { grid-template-columns: repeat(2, 1fr); }
   .section-title { font-size: 32px; }
   .about-section { padding: 56px 24px; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -797,10 +807,12 @@ body {
 
 .tier-benefits li::before {
   content: '—';
-  color: var(--gold);
+  color: var(--gold-deep);
   flex-shrink: 0;
   font-size: 12px;
 }
+
+.tier-card.top .tier-benefits li::before { color: var(--gold); }
 
 .tier-btn {
   width: 100%;
@@ -1011,10 +1023,12 @@ body {
 
 .pwu-benefits li::before {
   content: '—';
-  color: var(--gold);
+  color: var(--gold-deep);
   flex-shrink: 0;
   font-size: 12px;
 }
+
+.pwu-card-top .pwu-benefits li::before { color: var(--gold); }
 
 .pwu-btn {
   width: 100%;
@@ -1168,7 +1182,7 @@ body {
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-deep);
   margin-bottom: 8px;
 }
 
@@ -1198,7 +1212,7 @@ body {
 /* Athena slot */
 .sp-athena-slot {
   background: #fff;
-  border: 1px solid rgba(200,168,75,0.25);
+  border: 1px solid rgba(214,183,124,0.25);
   padding: 56px 40px;
   text-align: center;
   display: flex;
@@ -1211,14 +1225,14 @@ body {
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-deep);
   align-self: flex-end;
 }
 
 .sp-athena-divider {
   width: 48px;
   height: 1px;
-  background: rgba(200,168,75,0.3);
+  background: rgba(214,183,124,0.3);
 }
 
 .sp-athena-placeholder {
@@ -1281,12 +1295,12 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px dashed rgba(200,168,75,0.4);
+  border: 1px dashed rgba(214,183,124,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  color: rgba(200,168,75,0.5);
+  color: rgba(140,106,47,0.55);
 }
 
 .sp-slot-text {
@@ -1449,7 +1463,7 @@ body {
 
 /* Founding member card */
 .mem-card {
-  border: 1px solid rgba(200,168,75,0.25);
+  border: 1px solid rgba(214,183,124,0.25);
   padding: 48px 40px;
   position: relative;
   display: flex;
@@ -1529,7 +1543,7 @@ body {
 }
 
 .mem-card-quote {
-  border-left: 2px solid rgba(200,168,75,0.3);
+  border-left: 2px solid rgba(214,183,124,0.3);
   padding-left: 16px;
   margin-top: 8px;
 }
@@ -1711,7 +1725,7 @@ body {
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-deep);
 }
 
 .don-card-title {
@@ -1752,8 +1766,8 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
   font-weight: 300;
-  color: var(--gold);
-  opacity: 0.6;
+  color: var(--gold-deep);
+  opacity: 0.8;
   flex-shrink: 0;
   min-width: 24px;
 }
@@ -1884,4 +1898,3 @@ body {
   .don-impact { flex-direction: column; gap: 12px; }
   .don-impact-line { width: 60px; height: 1px; flex: none; }
 }
-
