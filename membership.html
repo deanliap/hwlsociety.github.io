@@ -5,13 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Membership — HWLS</title>
   <link rel="icon" type="image/png" href="assets/logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <style>
     .site-nav {
       position: relative;
       background: var(--navy);
+    }
+
+    /* Membership page: single centered column */
+    .mem-section {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .mem-left {
+      max-width: 640px;
+    }
+
+    /* label sits on navy here, so use the lighter gold and mirror the line on both sides */
+    .mem-section .section-label {
+      justify-content: center;
+      color: var(--gold);
+    }
+
+    .mem-section .section-label span {
+      display: none;
+    }
+
+    .mem-section .section-label::before,
+    .mem-section .section-label::after {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .mem-left .mem-body {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 520px;
+    }
+
+    .mem-left .mem-actions {
+      align-items: center;
     }
   </style>
 </head>
@@ -75,7 +115,6 @@
   <!-- MEMBERSHIP SECTION -->
   <section class="mem-section">
 
-    <!-- LEFT -->
     <div class="mem-left">
 
       <p class="section-label">
@@ -114,59 +153,6 @@
           class="mem-btn-ghost">
           Membership Agreement →
         </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- RIGHT -->
-    <div class="mem-right">
-
-      <div class="mem-card">
-
-        <div class="mem-card-top-rule"></div>
-
-        <div class="mem-card-label">
-          Founding Member Status
-        </div>
-
-        <div class="mem-card-year">
-          2026
-        </div>
-
-        <h3 class="mem-card-title">
-          Join before August 2026.<br>
-          <em>Be part of the origin story.</em>
-        </h3>
-
-        <p class="mem-card-desc">
-          All members who enroll on or before August 31, 2026 will be permanently recognized as Founding Members of HWLS — an honor that stays with you for the lifetime of your membership.
-        </p>
-
-        <ul class="mem-card-benefits">
-          <li>
-            Permanently listed as a Founding Member in HWLS records
-          </li>
-
-          <li>
-            Founding Member reduced dues in future years
-          </li>
-
-          <li>
-            Priority access to HWLS events and programming
-          </li>
-
-          <li>
-            Your name woven into the foundation of what HWLS becomes
-          </li>
-        </ul>
-
-        <div class="mem-card-quote">
-          <p>
-            "The women who show up first shape everything that follows."
-          </p>
-        </div>
 
       </div>
 
