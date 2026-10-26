@@ -132,7 +132,7 @@ body {
 
 /* ── HERO ── */
 .hero {
-  background: var(--navy);
+  background: radial-gradient(ellipse at 50% 30%, #0B5A85 0%, var(--navy) 65%);
   padding: 72px 48px 200px;
   display: flex;
   flex-direction: column;
@@ -159,23 +159,31 @@ body {
 
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 76px;
-  font-weight: 300;
-  line-height: 1.05;
+  font-size: clamp(52px, 8.5vw, 108px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
   color: #fff;
   margin: 0;
-  max-width: 600px;
+  max-width: 1000px;
   text-align: center;
 }
 
 .hero-title-italic {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 76px;
-  font-weight: 400;
+  font-size: clamp(52px, 8.5vw, 108px);
+  font-weight: 500;
   font-style: italic;
-  line-height: 1.0;
-  color: var(--gold);
-  margin: 0 0 36px;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--gold); /* fallback if gradient text is unsupported */
+  background: linear-gradient(135deg, #B8935A 0%, #EDD9A3 45%, #C9A46A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* padding keeps italic overhang and descenders from being clipped by the gradient */
+  padding: 0 0.1em 0.14em;
+  margin: 0 0 24px;
   text-align: center;
 }
 
