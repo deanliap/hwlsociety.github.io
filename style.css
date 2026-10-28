@@ -1905,3 +1905,101 @@ body {
   .don-impact { flex-direction: column; gap: 12px; }
   .don-impact-line { width: 60px; height: 1px; flex: none; }
 }
+
+/* ── ABOUT INTRO (synopsis + three pillars) ──
+   Paste at the END of style.css */
+
+.about-intro {
+  background: var(--navy);
+  padding: 72px 64px 88px;
+}
+
+/* label sits on navy here: champagne gold, single line */
+.about-intro .section-label {
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+
+.about-intro .section-label::before {
+  background: var(--gold);
+}
+
+.about-intro-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 56px;
+  align-items: end;
+}
+
+.about-intro-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 5.6vw, 72px);
+  font-weight: 500;
+  line-height: 1.02;
+  color: #fff;
+}
+
+.about-intro-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.about-intro-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.82);
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 72px;
+  border-top: 1px solid rgba(214,183,124,0.5);
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+
+.pillar {
+  padding: 36px 24px;
+}
+
+.pillar:first-child { padding-left: 0; }
+.pillar:last-child  { padding-right: 0; }
+
+.pillar-gr {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 4.4vw, 56px);
+  font-style: italic;
+  line-height: 1.05;
+  color: #fff;
+}
+
+.pillar-en {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 10px 0 12px;
+}
+
+.pillar-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.78);
+}
+
+@media (max-width: 768px) {
+  .about-intro { padding: 40px 24px 56px; }
+  .about-intro-top { gap: 28px; }
+  .about-intro-text { font-size: 15px; }
+
+  .pillars {
+    grid-template-columns: 1fr;
+    margin-top: 48px;
+  }
+
+  .pillar,
+  .pillar:first-child,
+  .pillar:last-child { padding: 28px 0; }
+
+  .pillar + .pillar { border-top: 1px solid rgba(255,255,255,0.14); }
+}
