@@ -1933,9 +1933,9 @@ body {
 
 .about-intro-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(44px, 5.6vw, 72px);
-  font-weight: 500;
-  line-height: 1.02;
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 1.2;
   color: #fff;
 }
 
@@ -1960,16 +1960,15 @@ body {
 
 .pillar {
   padding: 36px 24px;
+  text-align: center;
 }
-
-.pillar:first-child { padding-left: 0; }
-.pillar:last-child  { padding-right: 0; }
 
 .pillar-gr {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(40px, 4.4vw, 56px);
+  font-size: clamp(32px, 3.4vw, 42px);
+  font-weight: 300;
   font-style: italic;
-  line-height: 1.05;
+  line-height: 1.1;
   color: #fff;
 }
 
@@ -1990,6 +1989,7 @@ body {
 @media (max-width: 768px) {
   .about-intro { padding: 40px 24px 56px; }
   .about-intro-top { gap: 28px; }
+  .about-intro-title { font-size: 28px; line-height: 1.25; }
   .about-intro-text { font-size: 15px; }
 
   .pillars {
@@ -1997,9 +1997,7 @@ body {
     margin-top: 48px;
   }
 
-  .pillar,
-  .pillar:first-child,
-  .pillar:last-child { padding: 28px 0; }
+  .pillar { padding: 28px 0; }
 
   .pillar + .pillar { border-top: 1px solid rgba(255,255,255,0.14); }
 }
