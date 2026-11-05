@@ -109,9 +109,11 @@ body {
   height: 16px;
 }
 
-.nav-item:hover .nav-dropdown {
+.nav-item:hover .nav-dropdown,
+.nav-item:focus-within .nav-dropdown {
   display: block;
 }
+
 
 .nav-dropdown a {
   display: block;
