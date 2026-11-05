@@ -1,1 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events — HWLS</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .site-nav { position: relative; background: var(--navy); }
 
+    .events-page { background: var(--navy); padding: 60px 64px 100px; }
+    .events-wrap { max-width: 1100px; margin: 0 auto; }
+
+    .events-page .section-label { color: var(--gold); }
+    .events-page .section-label::before { background: var(--gold); }
+
+    .events-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 58px; font-weight: 300; line-height: 1.1;
+      color: #fff; margin-bottom: 20px;
+    }
+    .events-title em { font-style: italic; color: var(--gold); }
+    .events-intro {
+      font-size: 15px; line-height: 1.8; max-width: 560px;
+      color: rgba(255,255,255,0.7); margin-bottom: 64px;
+    }
+
+    /* NEXT UP */
+    .next-up {
+      display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: center;
+      border-top: 1px solid rgba(214,183,124,0.5);
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+      padding: 44px 0; margin-bottom: 72px;
+    }
+    .mini-cal { width: 280px; }
+    .mc-head {
+      font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300;
+      color: #fff; margin-bottom: 14px; text-align: center;
+    }
+    .mc-head em { color: var(--gold); }
+    .mc-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+    .mc-dow {
+      font-size: 10px; letter-spacing: 0.1em; text-align: center; padding-bottom: 6px;
+      color: rgba(255,255,255,0.45);
+    }
+    .mc-day {
+      aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+      font-size: 13px; color: rgba(255,255,255,0.7); border-radius: 50%;
+    }
+    .mc-event { background: var(--gold); color: var(--navy); font-weight: 500; }
+
+    .next-label {
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+    }
+    .next-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300;
+      line-height: 1.1; color: #fff; margin-bottom: 8px;
+    }
+    .next-title em { color: var(--gold); }
+    .next-type { font-size: 13px; letter-spacing: 0.06em; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+    .next-facts { display: grid; grid-template-columns: repeat(3, auto); gap: 40px; justify-content: start; }
+    .fact-label {
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 6px;
+    }
+    .fact-value { font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.88); }
+
+    /* YEAR GRID */
+    .year-head {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      gap: 24px; flex-wrap: wrap; margin-bottom: 28px;
+    }
+    .year-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: #fff;
+    }
+    .legend { display: flex; gap: 20px; flex-wrap: wrap; font-size: 12px; color: rgba(255,255,255,0.6); }
+    .legend span { display: inline-flex; align-items: center; }
+
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; flex-shrink: 0; }
+    .dot-panel { background: #D6B77C; }
+    .dot-coffee { background: #6D8C9B; }
+    .dot-social { background: #E8E4DE; }
+    .dot-community { background: #a8bec8; }
+    .dot-rest { border: 1px solid rgba(255,255,255,0.4); }
+
+    .ev-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.12);
+    }
+    .ev-card { background: var(--navy); padding: 28px 24px 30px; min-height: 170px; }
+    .ev-next { box-shadow: inset 0 2px 0 var(--gold); }
+    .ev-month {
+      font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400;
+      color: #fff; margin-bottom: 10px;
+    }
+    .ev-type {
+      display: flex; align-items: center; font-size: 10px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+    }
+    .ev-theme { font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.85); }
+    .ev-detail { font-size: 12px; line-height: 1.6; color: rgba(255,255,255,0.55); margin-top: 12px; }
+    .ev-rest .ev-month { color: rgba(255,255,255,0.45); }
+    .ev-rest .ev-type { color: rgba(255,255,255,0.4); font-style: italic; letter-spacing: 0.1em; }
+
+    @media (max-width: 1000px) {
+      .ev-grid { grid-template-columns: repeat(2, 1fr); }
+      .next-facts { grid-template-columns: 1fr; gap: 18px; }
+    }
+    @media (max-width: 768px) {
+      .events-page { padding: 40px 24px 70px; }
+      .events-title { font-size: 40px; }
+      .events-intro { margin-bottom: 40px; }
+      .next-up { grid-template-columns: 1fr; gap: 32px; padding: 32px 0; margin-bottom: 48px; }
+      .mini-cal { margin: 0 auto; }
+      .next-title { font-size: 34px; }
+    }
+    @media (max-width: 520px) {
+      .ev-grid { grid-template-columns: 1fr; }
+      .ev-card { min-height: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <div class="nav-left">
+      <img src="assets/logo.png" alt="HWLS Logo" class="nav-logo">
+      <span class="nav-brand">HWLS · EST. 2026</span>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <div class="nav-item">
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="about.html">About HWLS</a>
+          <a href="board.html">Executive Board</a>
+          <a href="partnerwithus.html">Partner With Us</a>
+          <a href="sponsors.html">Our Sponsors</a>
+        </div>
+      </div>
+      <a href="events.html">Events</a>
+      <a href="membership.html">Membership</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="donate-link">Donate</a>
+    </div>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="board.html">Executive Board</a>
+      <a href="partnerwithus.html">Partner With Us</a>
+      <a href="sponsors.html">Our Sponsors</a>
+      <a href="events.html">Events</a>
+      <a href="membership.html">Membership</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </nav>
+
+  <!-- EVENTS -->
+  <section class="events-page">
+    <div class="events-wrap">
+
+      <p class="section-label">Events</p>
+      <h1 class="events-title">2027 <em>Events.</em></h1>
+      <p class="events-intro">Panels, coffee chats, socials, and service. Here is what our year looks like, with more dates and details added as they are confirmed.</p>
+
+      <!-- NEXT UP -->
+      <div class="next-up">
+        <div class="mini-cal">
+          <div class="mc-head">January <em>2027</em></div>
+          <div class="mc-grid"><div class="mc-dow">S</div><div class="mc-dow">M</div><div class="mc-dow">T</div><div class="mc-dow">W</div><div class="mc-dow">T</div><div class="mc-dow">F</div><div class="mc-dow">S</div><div class="mc-day mc-empty"></div><div class="mc-day mc-empty"></div><div class="mc-day mc-empty"></div><div class="mc-day mc-empty"></div><div class="mc-day mc-empty"></div><div class="mc-day">1</div><div class="mc-day">2</div><div class="mc-day">3</div><div class="mc-day">4</div><div class="mc-day">5</div><div class="mc-day">6</div><div class="mc-day">7</div><div class="mc-day">8</div><div class="mc-day mc-event" aria-label="January 9, Build Your Brand panel">9</div><div class="mc-day">10</div><div class="mc-day">11</div><div class="mc-day">12</div><div class="mc-day">13</div><div class="mc-day">14</div><div class="mc-day">15</div><div class="mc-day">16</div><div class="mc-day">17</div><div class="mc-day">18</div><div class="mc-day">19</div><div class="mc-day">20</div><div class="mc-day">21</div><div class="mc-day">22</div><div class="mc-day">23</div><div class="mc-day">24</div><div class="mc-day">25</div><div class="mc-day">26</div><div class="mc-day">27</div><div class="mc-day">28</div><div class="mc-day">29</div><div class="mc-day">30</div><div class="mc-day">31</div><div class="mc-day mc-empty"></div><div class="mc-day mc-empty"></div><div class="mc-day mc-empty"></div><div class="mc-day mc-empty"></div><div class="mc-day mc-empty"></div><div class="mc-day mc-empty"></div></div>
+        </div>
+        <div>
+          <div class="next-label">Next up</div>
+          <h2 class="next-title">Build Your <em>Brand</em></h2>
+          <p class="next-type">Panel</p>
+          <div class="next-facts">
+            <div><div class="fact-label">Date</div><div class="fact-value">Saturday, January 9</div></div>
+            <div><div class="fact-label">Time</div><div class="fact-value">11:30 AM – 2:30 PM</div></div>
+            <div><div class="fact-label">Location</div><div class="fact-value">Willow Room</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- YEAR AT A GLANCE -->
+      <div class="year-head">
+        <h2 class="year-title">The year at a glance</h2>
+        <div class="legend">
+          <span><span class="dot dot-panel"></span>Panel</span>
+          <span><span class="dot dot-coffee"></span>Coffee Chat</span>
+          <span><span class="dot dot-social"></span>Social</span>
+          <span><span class="dot dot-community"></span>Community Campaign</span>
+          <span><span class="dot dot-rest"></span>Rest</span>
+        </div>
+      </div>
+
+      <div class="ev-grid">
+<div class="ev-card ev-next"><div class="ev-month">January</div><div class="ev-type"><span class="dot dot-panel"></span>Panel</div><div class="ev-theme">Build Your Brand</div><div class="ev-detail">Saturday, January 9 · 11:30 AM – 2:30 PM · Willow Room</div></div>
+<div class="ev-card"><div class="ev-month">February</div><div class="ev-type"><span class="dot dot-social"></span>Social Event</div><div class="ev-theme">Galentine’s / Wellness</div></div>
+<div class="ev-card"><div class="ev-month">March</div><div class="ev-type"><span class="dot dot-coffee"></span>Coffee Chat</div><div class="ev-theme">Office Fashion</div></div>
+<div class="ev-card"><div class="ev-month">April</div><div class="ev-type"><span class="dot dot-community"></span>Community Campaign</div><div class="ev-theme">Clothing Drive</div></div>
+<div class="ev-card ev-rest"><div class="ev-month">May</div><div class="ev-type"><span class="dot dot-rest"></span>Rest month</div></div>
+<div class="ev-card"><div class="ev-month">June</div><div class="ev-type"><span class="dot dot-coffee"></span>Coffee Chat</div><div class="ev-theme">Headshot Coffee Chat: Perfecting Your Image</div></div>
+<div class="ev-card ev-rest"><div class="ev-month">July</div><div class="ev-type"><span class="dot dot-rest"></span>Rest month</div></div>
+<div class="ev-card ev-rest"><div class="ev-month">August</div><div class="ev-type"><span class="dot dot-rest"></span>Rest month</div></div>
+<div class="ev-card"><div class="ev-month">September</div><div class="ev-type"><span class="dot dot-panel"></span>Panel</div><div class="ev-theme">Theme to be announced</div></div>
+<div class="ev-card"><div class="ev-month">October</div><div class="ev-type"><span class="dot dot-community"></span>Community Campaign</div><div class="ev-theme">Theme to be announced</div></div>
+<div class="ev-card ev-rest"><div class="ev-month">November</div><div class="ev-type"><span class="dot dot-rest"></span>Rest month</div></div>
+<div class="ev-card"><div class="ev-month">December</div><div class="ev-type"><span class="dot dot-social"></span>Social Event</div><div class="ev-theme">Holiday Party</div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.style.display =
+        mobileMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    const navItem = document.querySelector('.nav-item');
+    const dropdown = document.querySelector('.nav-dropdown');
+    let closeTimer;
+
+    navItem.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+      dropdown.style.display = 'block';
+    });
+    navItem.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => { dropdown.style.display = 'none'; }, 200);
+    });
+    dropdown.addEventListener('mouseenter', () => { clearTimeout(closeTimer); });
+    dropdown.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => { dropdown.style.display = 'none'; }, 200);
+    });
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-name">Hellenic Women's Leadership Society</div>
+        <div class="footer-tagline">Δύναμη · Σοφία · Ηγεσία</div>
+        <p class="footer-desc">A professional community for Hellenic women across the Midwest. Founded 2026.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Organization</h4>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="board.html">Leadership</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Membership</h4>
+        <ul>
+          <li><a href="membership.html">Join HWLS</a></li>
+          <li><a href="https://drive.google.com/file/d/1THDH10t5FaaHmnCAkk89l867xReld6sR/view?usp=sharing" target="_blank">Membership Agreement</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Partners</h4>
+        <ul>
+          <li><a href="partnerwithus.html">Sponsorship Tiers</a></li>
+          <li><a href="sponsors.html">Our Partners</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Hellenic Women's Leadership Society. All rights reserved.</div>
+      <div class="footer-motto">Est. 2026 · Chicago, IL</div>
+    </div>
+  </footer>
+
+</body>
+</html>
