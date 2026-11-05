@@ -93,10 +93,18 @@
       color: var(--gold);
       margin-bottom: 24px;
     }
+
+    /* Zelle: full-width card across the bottom, same width as the two cards above */
+    .support-card-wide {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
     .zelle-qr {
-      margin-top: 32px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-left: 48px;
+      border-left: 1px solid rgba(255,255,255,0.08);
     }
     .zelle-qr-label {
       font-size: 10px;
@@ -115,6 +123,13 @@
       .donate-section { padding: 100px 30px 70px; }
       .support-grid { grid-template-columns: 1fr; }
       .donate-title { font-size: 42px; }
+      .support-card-wide { grid-template-columns: 1fr; gap: 32px; }
+      .zelle-qr {
+        padding-left: 0;
+        padding-top: 32px;
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
     }
   </style>
 </head>
@@ -168,18 +183,12 @@
 
     <div class="support-grid">
 
-      <!-- INDIVIDUAL SUPPORT -->
+      <!-- INDIVIDUAL SUPPORT (Zeffy) -->
       <div class="support-card">
         <div class="support-label">Individual Support</div>
         <h2 class="support-title">Help Build Our Legacy</h2>
         <p class="support-text">Your support allows HWLS to continue developing programs, hosting events, and creating spaces where Hellenic women can connect, grow, and lead.</p>
-        <p class="zelle-tag">Send via Zelle to</p>
-        <p class="zelle-handle">$hwlsociety</p>
-        <a href="https://enroll.zellepay.com/qr-codes?data=eyJ0b2tlbiI6Imh3bHNvY2lldHkiLCJuYW1lIjoiSEVMTEVOSUMiLCJhY3Rpb24iOiJQQVlNRU5UIn0=" target="_blank" class="support-btn">Pay via Zelle</a>
-        <div class="zelle-qr">
-          <p class="zelle-qr-label">Or scan to pay</p>
-          <img src="assets/zelleqr.png" alt="Zelle QR Code">
-        </div>
+        <a href="https://www.zeffy.com/en-US/donation-form/donate-to-hwls" target="_blank" rel="noopener" class="support-btn">Donate via Zeffy</a>
       </div>
 
       <!-- PARTNER SUPPORT -->
@@ -188,6 +197,22 @@
         <h2 class="support-title">Become a Partner</h2>
         <p class="support-text">Organizations can support the next generation of Hellenic women leaders through sponsorship opportunities and meaningful partnerships with HWLS.</p>
         <a href="partnerwithus.html" class="support-btn">Partner With Us</a>
+      </div>
+
+      <!-- ZELLE (full width) -->
+      <div class="support-card support-card-wide">
+        <div class="zelle-info">
+          <div class="support-label">Prefer Zelle?</div>
+          <h2 class="support-title">Give with Zelle</h2>
+          <p class="support-text">You can also send your gift directly through Zelle. Use the handle below, tap the button, or scan the QR code.</p>
+          <p class="zelle-tag">Send via Zelle to</p>
+          <p class="zelle-handle">$hwlsociety</p>
+          <a href="https://enroll.zellepay.com/qr-codes?data=eyJ0b2tlbiI6Imh3bHNvY2lldHkiLCJuYW1lIjoiSEVMTEVOSUMiLCJhY3Rpb24iOiJQQVlNRU5UIn0=" target="_blank" rel="noopener" class="support-btn">Pay via Zelle</a>
+        </div>
+        <div class="zelle-qr">
+          <p class="zelle-qr-label">Or scan to pay</p>
+          <img src="assets/zelleqr.png" alt="Zelle QR Code">
+        </div>
       </div>
 
     </div>
